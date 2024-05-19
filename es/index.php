@@ -14,33 +14,49 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- ======== CSS here ======== -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/lineicons.css" />
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/lineicons.css" />
+    <link rel="stylesheet" href="/assets/css/animate.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <!-- ======== Language ======== -->
+    <link rel="alternate" hreflang="es" href="https://www.ansftranslations.com/es/index.php">
+    <link rel="alternate" hreflang="en" href="https://www.ansftranslations.com/en/index.php">
+    
+    <!-- reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=tu_clave_de_sitio"></script>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LdP_-ApAAAAAPP7eVG0tLwmaRD1-_dFAqPJ-Mh1', {action: 'submit'}).then(function(token) {
+               
+                var recaptchaResponse = document.getElementById('recaptchaResponse');
+                recaptchaResponse.value = token;
+            });
+        });
+    </script>
   </head>
-    <style>
-    .navbar-brand img {
+  <style>
+  .navbar-brand img {
     width: 130%;  
-}
+  }
 
- .whatsapp {
-  position:fixed;
-  width:60px;
-  height:60px;
-  bottom:40px;
-  left:40px;
-  background-color:#25d366;
-  color:#FFF;
-  border-radius:50px;
-  text-align:center;
-  font-size:30px;
-  z-index:100;
-}
+  .whatsapp {
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    left:40px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+  }
 
-.whatsapp-icon {
-  margin-top:13px;
-}
+  .whatsapp-icon {
+    margin-top:13px;
+  }
 </style>
   <body>
       		<a href="https://wa.me/573103101926?text=Me%20gustaría%20obtener%20más%20información%20-%20ansftranslations.com" class="whatsapp" target="_blank"> <i class="lni lni-whatsapp whatsapp-icon"></i></a>
@@ -79,7 +95,7 @@
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand" href="#home">
-  <img src="images/logo.png" alt="Logo de ANSF Traducciones" style="width: 130%;" />
+  <img src="/images/logo.png" alt="Logo de ANSF Traducciones" style="width: 130%;" />
             </a>
             <button
               class="navbar-toggler"
@@ -116,13 +132,13 @@
                   <a class="page-scroll" href="#clients">Clientes</a>
                 </li>
                 <li class="nav-item">
-                  <a href="javascript:void(0)">
-                    <img src="images/col.avif" alt="Español - Bandera de Colombia" style="height:20px;">
+                  <a href="/es/">
+                    <img src="/images/col.avif" alt="Español - Bandera de Colombia" style="height:20px;">
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="javascript:void(0)">
-                    <img src="images/usa.avif" alt="English - Bandera de USA" style="height:20px;">
+                  <a href="/en/">
+                    <img src="/images/usa.avif" alt="English - Bandera de USA" style="height:20px;">
                   </a>
                 </li>
               </ul>
@@ -171,7 +187,7 @@
       </div>
       <div class="col-lg-6">
         <div class="hero-img wow fadeInUp" data-wow-delay=".5s">
-          <img src="images/banner.jpeg" style="border-radius: 5%;" alt="Equipo de ANSF Traducciones trabajando en proyectos" />
+          <img src="/images/banner.jpeg" style="border-radius: 5%;" alt="Equipo de ANSF Traducciones trabajando en proyectos" />
         </div>
       </div>
     </div>
@@ -184,9 +200,9 @@
     <div class="row align-items-center">
       <div class="col-xl-6 col-lg-6">
         <div class="about-img">
-          <img src="assets/img/about/team.webp" alt="Equipo de ANSF Traducciones" class="w-100" style="border-radius: 25%;" />
+          <img src="/assets/img/about/team.webp" alt="Equipo de ANSF Traducciones" class="w-100" style="border-radius: 25%;" />
           <img src="assets/img/about/about-left-shape.svg" alt="Decorative shape" class="shape shape-1" />
-          <img src="assets/img/about/left-dots.svg" alt="Decorative dots" class="shape shape-2" />
+          <img src="/assets/img/about/left-dots.svg" alt="Decorative dots" class="shape shape-2" />
         </div>
       </div>
       <div class="col-xl-6 col-lg-6">
@@ -403,14 +419,14 @@
       </div>
       <div class="col-xl-6 col-lg-6 order-first order-lg-last">
         <div class="about-img-2">
-          <img src="assets/img/about/team.webp" alt="Clientes de ANSF Traducciones" class="w-100" style="border-radius: 25%;" />
+          <img src="/assets/img/about/clients.webp" alt="Clientes de ANSF Traducciones" class="w-100" style="border-radius: 25%;" />
           <img
-            src="assets/img/about/about-right-shape.svg"
+            src="/assets/img/about/about-right-shape.svg"
             alt="Forma decorativa"
             class="shape shape-1"
           />
           <img
-            src="assets/img/about/right-dots.svg"
+            src="/assets/img/about/right-dots.svg"
             alt="Puntos decorativos"
             class="shape shape-2"
           />
@@ -433,23 +449,26 @@
             </p>
           </div>
         </div>
-        <div class="col-xl-6 col-lg-5">
-          <form action="/Mailer.php" method="POST" class="subscribe-form">
-            <div>
-              <input type="text" name="nombre" id="nombre" placeholder="Nombre" required class="input" style="width: 100%; padding: 10px; margin-bottom: 10px;"/>
-              <input type="email" name="correo_electrónico" id="correo_electrónico" placeholder="Correo Electrónico " required class="input" style="width: 100%; padding: 10px; margin-bottom: 10px;"/>
-              <select id="servicio" name="servicio" class="input" required style="width: 100%; padding: 10px; margin-bottom: 10px; background-color: #fff; border: 1px solid #ccc;">
+       <div class="col-xl-6 col-lg-5">
+    <form action="/Mailer.php" method="POST" enctype="multipart/form-data" class="subscribe-form">
+        <div>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required class="input" style="width: 100%; padding: 10px; margin-bottom: 10px;"/>
+            <input type="email" name="correo_electrónico" id="correo_electrónico" placeholder="Correo Electrónico " required class="input" style="width: 100%; padding: 10px; margin-bottom: 10px;"/>
+            <select id="servicio" name="servicio" class="input" required style="width: 100%; padding: 10px; margin-bottom: 10px; background-color: #fff; border: 1px solid #ccc;">
                 <option value="">Servicio Requerido</option>
                 <option value="Traducción de un idioma a otro">Traducción de un idioma a otro</option>
                 <option value="Traducción sitio web">Traducción sitio web</option>
                 <option value="Traducción Simultánea">Traducción Simultánea</option>
                 <option value="Doblaje de Videos">Doblaje de Videos</option>
-              </select>
-              <textarea name="indicaciones" id="indicaciones" placeholder="Indicaciones Especiales" required class="input" style="width: 100%; height: 100px; padding: 10px; background-color: #fff; border: 1px solid #ccc;"></textarea>
-            </div>
-            <input type="submit" class="main-btn btn-hover" style="width: 100%; padding: 10px 0; background-color: #333; color: #fff; border: none; cursor: pointer;" value="Enviar"></input>
-          </form>
+            </select>
+            <textarea name="indicaciones" id="indicaciones" placeholder="Indicaciones Especiales" required class="input" style="width: 100%; height: 100px; padding: 10px; background-color: #fff; border: 1px solid #ccc;"></textarea>
+            <input type="file" name="documento_adjunto" id="documento_adjunto" class="input" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+            <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
         </div>
+        <input type="submit" class="main-btn btn-hover" style="width: 100%; padding: 10px 0; background-color: #333; color: #fff; border: none; cursor: pointer;" value="Enviar">
+    </form>
+</div>
+
       </div>
     </div>
   </div>
@@ -517,8 +536,8 @@
     </a>
 
     <!-- ======== JS here ======== -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>

@@ -12,7 +12,7 @@ $Web="https://ansftranslations.com";
 
 //Mensaje
 $Subject="Nuevo contacto de ansftranslations.com";
-$To="customers@ansftranslations.com";
+$To="kahs_kevin@hotmail.com";
 
 $Message = "Nuevo contacto de ansftranslations.com:\n\n";
 $Message .= "Nombre: " . $_POST["nombre"] . "\n";
@@ -20,7 +20,57 @@ $Message .= "Correo Electrónico: " . $_POST["correo_electrónico"] . "\n";
 $Message .= "Servicio Requerido: " . $_POST["servicio"] . "\n";
 $Message .= "Indicaciones Especiales: " . $_POST["indicaciones"] . "\n";
 
+/*
+// Tu clave secreta
+$secret = "6LdP_-ApAAAAAPP7eVG0tLwmaRD1-_dFAqPJ-Mh1";
+
+// La respuesta de reCAPTCHA desde el formulario
+$recaptcha_response = $_POST['recaptcha_response'];
+
+// Verificar la respuesta de reCAPTCHA
+$url = 'https://www.google.com/recaptcha/api/siteverify';
+$data = [
+    'secret' => $secret,
+    'response' => $recaptcha_response
+];
+
+$options = [
+    'http' => [
+        'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+        'method' => 'POST',
+        'content' => http_build_query($data)
+    ]
+];
+
+$context = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+$resultJson = json_decode($result);
+
+// Comprobación mejorada para incluir puntuación y mensaje de error
+if ($resultJson->success !== true || $resultJson->score <= 0.5) {
+    // La verificación ha fallado o la puntuación es demasiado baja
+    $errorDetails = "Captcha verification failed";
+    if ($resultJson->success !== true) {
+        $errorDetails .= " - Verification failed.";
+    }
+    if ($resultJson->score !== null && $resultJson->score <= 0.5) {
+        $errorDetails .= " - Score too low: " . $resultJson->score;
+    }
+    if (!empty($resultJson->{'error-codes'})) {
+        // Incluir códigos de error de Google si están disponibles
+        $errorDetails .= " - Error codes: " . implode(', ', $resultJson->{'error-codes'});
+    }
+    echo $errorDetails;
+    exit;
+}
+
+// Continuar procesando el formulario
+echo 'Captcha verification succeeded, Score: ' . $resultJson->score;
+
+*/
+
 //TEST de POST
+
 /*
 echo $Host;
 echo $From;
@@ -99,8 +149,6 @@ curl_close ($ch);
 
 */
 
-
-
 	$mail = new PHPMailer;
 	$mail->isSMTP();
 	$mail->SMTPDebug = 0;
@@ -127,8 +175,11 @@ curl_close ($ch);
 		'verify_peer' => false,
 		'verify_peer_name' => false,
 		'allow_self_signed' => true
-	)
-	);
+	));
+
+	if (isset($_FILES['documento_adjunto']) && $_FILES['documento_adjunto']['error'] == UPLOAD_ERR_OK) {
+    $mail->AddAttachment($_FILES['documento_adjunto']['tmp_name'], $_FILES['documento_adjunto']['name']);
+}
 
 	if (!$mail->send())
 	{
