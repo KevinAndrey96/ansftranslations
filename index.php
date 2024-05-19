@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
     <style>
+    .navbar-brand img {
+    width: 130%;  
+}
+
  .whatsapp {
   position:fixed;
   width:60px;
@@ -75,7 +79,7 @@
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand" href="#home">
-              <img src="images/logo.png" alt="Logo de ANSF Traducciones" />
+  <img src="images/logo.png" alt="Logo de ANSF Traducciones" style="width: 130%;" />
             </a>
             <button
               class="navbar-toggler"
@@ -146,6 +150,16 @@
           </h1>
           <p class="wow fadeInUp" data-wow-delay=".6s">
             Líderes en servicios de traducción profesional desde 1985. Conoce nuestros servicios y cómo podemos ayudarte a alcanzar tus objetivos globales.
+            <b>
+            <br><br>
+            •	Traducciones Oficiales y Corrientes: Inglés. Francés, Italiano, Alemán, Portugués, Chino y otros Idiomas.  
+            <br>
+            •	Traducción Simultánea y Consecutiva con equipos.
+            </b>
+            <br><br>
+            <a href="tel:+573103101926" style='text-decoration:none;color:white;'>+57 3103101926</a> - <a href="tel:+573158502592" style='text-decoration:none;color:white;'>+57 3158502592</a>
+            <br>
+            <a href="mailto:roberto.forero@ansftranslations.com" style='text-decoration:none;color:white;'>roberto.forero@ansftranslations.com</a>
           </p>
           <a href="https://wa.me/573103101926?text=Me%20interesaría%20saber%20más%20sobre%20sus%20servicios%20de%20traducción" class="main-btn border-btn btn-hover wow fadeInUp" target="_blank" data-wow-delay=".6s">
             Chatea con nosotros
