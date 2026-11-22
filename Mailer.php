@@ -3,16 +3,16 @@ require 'Mailer/PHPMAILER/class.phpmailer.php';
 require 'Mailer/PHPMAILER/class.smtp.php';
 require 'Mailer/PHPMAILER/PHPMailerAutoload.php';
 
-//Remitente
-$Host="ansftranslations.com";
-$From="sender@ansftranslations.com";
-$Password="Sender2024@";
-$Business="ansftranslations";
-$Web="https://ansftranslations.com";
+// Remitente y Configuración SMTP (Variables de entorno con valores por defecto)
+$Host = getenv('SMTP_HOST') ?: "mail.example.com";
+$From = getenv('SMTP_USER') ?: "sender@example.com";
+$Password = getenv('SMTP_PASSWORD') ?: "your_smtp_password";
+$Business = getenv('BUSINESS_NAME') ?: "ANSF Translations";
+$Web = getenv('SITE_URL') ?: "https://example.com";
 
-//Mensaje
-$Subject="Nuevo contacto de ansftranslations.com";
-$To="kahs_kevin@hotmail.com";
+// Mensaje y Destinatario
+$Subject = "Nuevo contacto - Solicitud de cotización de traducción";
+$To = getenv('NOTIFICATION_EMAIL') ?: "contact@example.com";
 
 $Message = "Nuevo contacto de ansftranslations.com:\n\n";
 $Message .= "Nombre: " . $_POST["nombre"] . "\n";
@@ -129,25 +129,7 @@ $Texto="
     ";
 
 
-$Host="mail.ipsjcordoba.com";
-$From="no-responder@ipsjcordoba.com";
-$Password="O!od]#+[I5QV";
-$Business="IPS J.cordoba";
-$Web="https://ipsjcordoba.com";
-$Subject="Registro de asesor éxitoso";
-$Message=$Texto;
-$To=$email;
-
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL,"https://ipsjcordoba.com/Citas/Mailer.php");
-curl_setopt($ch, CURLOPT_POST, TRUE);
-curl_setopt($ch, CURLOPT_POSTFIELDS, "Host=$Host&From=$From&Password=$Password&Business=$Business&Web=$Web&Subject=$Subject&Message=".$Message."&To=$To");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$remote_server_output = curl_exec ($ch);
-curl_close ($ch);
-
-
-*/
+// Plantilla de notificación transaccional procesada via PHPMailer
 
 	$mail = new PHPMailer;
 	$mail->isSMTP();
