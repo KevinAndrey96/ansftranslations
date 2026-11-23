@@ -27,7 +27,7 @@
     <script src="https://www.google.com/recaptcha/api.js?render=tu_clave_de_sitio"></script>
     <script>
         grecaptcha.ready(function() {
-            grecaptcha.execute('6LdP_-ApAAAAAPP7eVG0tLwmaRD1-_dFAqPJ-Mh1', {action: 'submit'}).then(function(token) {
+            grecaptcha.execute('tu_clave_de_sitio', {action: 'submit'}).then(function(token) {
                
                 var recaptchaResponse = document.getElementById('recaptchaResponse');
                 recaptchaResponse.value = token;

@@ -1,4 +1,4 @@
-# Turnkey Multilingual Corporate & Translation Agency Website Template
+# Bilingual Translation Agency Web Portal (php-ansftranslations-translation-agency)
 
 [![PHP](https://img.shields.io/badge/PHP-8.1%20%7C%208.2%20%7C%208.3-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net)
 [![i18n](https://img.shields.io/badge/Bilingual-ES%20%2F%20EN-orange?style=for-the-badge)](https://en.wikipedia.org/wiki/Internationalization_and_localization)
@@ -63,8 +63,8 @@ Run the bilingual translation agency website locally in seconds:
 
 ### 1. Clone the Repository
 ```bash
-git clone git@github.com-personal:KevinAndrey96/ansftranslations.git
-cd ansftranslations
+git clone git@github.com:KevinAndrey96/php-ansftranslations-translation-agency.git
+cd php-ansftranslations-translation-agency
 ```
 
 ### 2. Launch the Web Service

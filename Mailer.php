@@ -21,8 +21,8 @@ $Message .= "Servicio Requerido: " . $_POST["servicio"] . "\n";
 $Message .= "Indicaciones Especiales: " . $_POST["indicaciones"] . "\n";
 
 /*
-// Tu clave secreta
-$secret = "6LdP_-ApAAAAAPP7eVG0tLwmaRD1-_dFAqPJ-Mh1";
+// Tu clave secreta reCAPTCHA (vía variable de entorno o fallback)
+$secret = getenv('RECAPTCHA_SECRET_KEY') ?: "your_recaptcha_secret_key";
 
 // La respuesta de reCAPTCHA desde el formulario
 $recaptcha_response = $_POST['recaptcha_response'];
